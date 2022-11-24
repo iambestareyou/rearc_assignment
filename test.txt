@@ -1,0 +1,5 @@
+#!/bin/bash
+cd /home/ec2-user/new/quest/
+sudo cp /tmp/Dockerfile /home/ec2-user/new/quest/Dockerfile
+sudo docker build . -t iambestareyou/node-web-app
+sudo docker run -p 80:3000 -e SECRET_WORD='TwelveFactor' -d iambestareyou/node-web-app
